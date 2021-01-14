@@ -1,18 +1,18 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 function CategoriesAPI() {
     const [categories, setCategories] = useState([])
     const [callback, setCallback] = useState(false)
 
-    useEffect(() =>{
-        const getCategories = async () =>{
-            const res = await axios.get('/api/category')
+    useEffect(() => {
+        const getCategories = async () => {
+            const res = await axios.get('https://gadumuc-shop-server.herokuapp.com//api/category')
             setCategories(res.data)
         }
 
         getCategories()
-    },[callback])
+    }, [callback])
     return {
         categories: [categories, setCategories],
         callback: [callback, setCallback]

@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 
@@ -11,15 +11,15 @@ function ProductsAPI() {
     const [page, setPage] = useState(1)
     const [result, setResult] = useState(0)
 
-    useEffect(() =>{
+    useEffect(() => {
         const getProducts = async () => {
-            const res = await axios.get(`/api/products?limit=${page*9}&${category}&${sort}&title[regex]=${search}`)
+            const res = await axios.get(`https://gadumuc-shop-server.herokuapp.com/api/products?limit=${page * 9}&${category}&${sort}&title[regex]=${search}`)
             setProducts(res.data.products)
             setResult(res.data.result)
         }
         getProducts()
-    },[callback, category, sort, search, page])
-    
+    }, [callback, category, sort, search, page])
+
     return {
         products: [products, setProducts],
         callback: [callback, setCallback],
