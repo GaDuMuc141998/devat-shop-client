@@ -19,7 +19,7 @@ function Login() {
 
             localStorage.setItem('firstLogin', true)
 
-            window.location.href = "/";
+            window.location.href = "https://gadumuc-shop-server.herokuapp.com/";
         } catch (err) {
             alert(err.response.data.msg)
         }
@@ -37,7 +37,7 @@ function Login() {
 
                 <div className="row">
                     <button type="submit">Login</button>
-                    <Link to="/register">Register</Link>
+                    <Link to="https://gadumuc-shop-server.herokuapp.com/register">Register</Link>
                 </div>
             </form>
         </div>

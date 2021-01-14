@@ -18,14 +18,14 @@ function Header() {
 
         localStorage.removeItem('firstLogin')
 
-        window.location.href = "/";
+        window.location.href = "https://gadumuc-shop-server.herokuapp.com/";
     }
 
     const adminRouter = () => {
         return (
             <>
-                <li><Link to="/create_product">Create Product</Link></li>
-                <li><Link to="/category">Categories</Link></li>
+                <li><Link to="https://gadumuc-shop-server.herokuapp.com/create_product">Create Product</Link></li>
+                <li><Link to="https://gadumuc-shop-server.herokuapp.com/category">Categories</Link></li>
             </>
         )
     }
@@ -33,8 +33,8 @@ function Header() {
     const loggedRouter = () => {
         return (
             <>
-                <li><Link to="/history">History</Link></li>
-                <li><Link to="/" onClick={logoutUser}>Logout</Link></li>
+                <li><Link to="https://gadumuc-shop-server.herokuapp.com/history">History</Link></li>
+                <li><Link to="https://gadumuc-shop-server.herokuapp.com/" onClick={logoutUser}>Logout</Link></li>
             </>
         )
     }
@@ -52,17 +52,17 @@ function Header() {
 
             <div className="logo">
                 <h1>
-                    <Link to="/">{isAdmin ? 'Admin' : 'DevAT Shop'}</Link>
+                    <Link to="https://gadumuc-shop-server.herokuapp.com/">{isAdmin ? 'Admin' : 'DevAT Shop'}</Link>
                 </h1>
             </div>
 
             <ul style={styleMenu}>
-                <li><Link to="/">{isAdmin ? 'Products' : 'Shop'}</Link></li>
+                <li><Link to="https://gadumuc-shop-server.herokuapp.com/">{isAdmin ? 'Products' : 'Shop'}</Link></li>
 
                 {isAdmin && adminRouter()}
 
                 {
-                    isLogged ? loggedRouter() : <li><Link to="/login">Login ✥ Register</Link></li>
+                    isLogged ? loggedRouter() : <li><Link to="https://gadumuc-shop-server.herokuapp.com/login">Login ✥ Register</Link></li>
                 }
 
                 <li onClick={() => setMenu(!menu)}>
@@ -75,7 +75,7 @@ function Header() {
                 isAdmin ? ''
                     : <div className="cart-icon">
                         <span>{cart.length}</span>
-                        <Link to="/cart">
+                        <Link to="https://gadumuc-shop-server.herokuapp.com/cart">
                             <img src={Cart} alt="" width="30" />
                         </Link>
                     </div>
