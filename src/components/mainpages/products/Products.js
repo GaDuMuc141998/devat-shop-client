@@ -81,7 +81,7 @@ function Products() {
             </div>
 
             <LoadMore />
-            {products ? products.length === 0 && <Loading /> : ""}
+            <Loading />
         </>
     )
 }
