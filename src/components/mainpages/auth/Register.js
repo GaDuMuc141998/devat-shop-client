@@ -41,7 +41,7 @@ function Register() {
 
                 <div className="row">
                     <button type="submit">Register</button>
-                    <Link to="https://gadumuc-shop-server.herokuapp.com/login">Login</Link>
+                    <Link to="/login">Login</Link>
                 </div>
             </form>
         </div>

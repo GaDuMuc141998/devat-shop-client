@@ -49,7 +49,7 @@ function OrderHistory() {
                             <tr key={items._id}>
                                 <td>{items.paymentID}</td>
                                 <td>{new Date(items.createdAt).toLocaleDateString()}</td>
-                                <td><Link to={`https://gadumuc-shop-server.herokuapp.com/history/${items._id}`}>View</Link></td>
+                                <td><Link to={`/history/${items._id}`}>View</Link></td>
                             </tr>
                         ))
                     }
