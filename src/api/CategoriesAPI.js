@@ -7,7 +7,7 @@ function CategoriesAPI() {
 
     useEffect(() => {
         const getCategories = async () => {
-            const res = await axios.get('https://gadumuc-shop-server.herokuapp.com//api/category')
+            const res = await axios.get('https://gadumuc-shop-server.herokuapp.com/api/category')
             setCategories(res.data)
         }
 
