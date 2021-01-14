@@ -18,7 +18,7 @@ function Header() {
 
         localStorage.removeItem('firstLogin')
 
-        window.location.href = "https://gadumuc-shop-server.herokuapp.com/";
+        window.location.href = "/";
     }
 
     const adminRouter = () => {

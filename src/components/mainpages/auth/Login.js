@@ -19,7 +19,7 @@ function Login() {
 
             localStorage.setItem('firstLogin', true)
 
-            window.location.href = "https://gadumuc-shop-server.herokuapp.com/";
+            window.location.href = "/";
         } catch (err) {
             alert(err.response.data.msg)
         }
