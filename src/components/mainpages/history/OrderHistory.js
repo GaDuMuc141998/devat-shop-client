@@ -1,6 +1,6 @@
-import React, {useContext, useEffect} from 'react'
-import {GlobalState} from '../../../GlobalState'
-import {Link} from 'react-router-dom'
+import React, { useContext, useEffect } from 'react'
+import { GlobalState } from '../../../GlobalState'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 function OrderHistory() {
@@ -8,26 +8,26 @@ function OrderHistory() {
     const [history, setHistory] = state.userAPI.history
     const [isAdmin] = state.userAPI.isAdmin
     const [token] = state.token
-    
+
 
     useEffect(() => {
-        if(token){
-            const getHistory = async() =>{
-                if(isAdmin){
-                    const res = await axios.get('/api/payment', {
-                        headers: {Authorization: token}
+        if (token) {
+            const getHistory = async () => {
+                if (isAdmin) {
+                    const res = await axios.get('https://gadumuc-shop-server.herokuapp.com/api/payment', {
+                        headers: { Authorization: token }
                     })
                     setHistory(res.data)
-                }else{
-                    const res = await axios.get('/user/history', {
-                        headers: {Authorization: token}
+                } else {
+                    const res = await axios.get('https://gadumuc-shop-server.herokuapp.com/user/history', {
+                        headers: { Authorization: token }
                     })
                     setHistory(res.data)
                 }
             }
             getHistory()
         }
-    },[token, isAdmin, setHistory])
+    }, [token, isAdmin, setHistory])
 
     return (
         <div className="history-page">
