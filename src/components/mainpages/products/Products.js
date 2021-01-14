@@ -60,7 +60,6 @@ function Products() {
     return (
         <>
             <Filters />
-
             {
                 isAdmin &&
                 <div className="delete-all">
@@ -72,16 +71,15 @@ function Products() {
 
             <div className="products">
                 {
-                    products ?
-                        products.map(product => {
-                            return <ProductItem key={product._id} product={product}
-                                isAdmin={isAdmin} deleteProduct={deleteProduct} handleCheck={handleCheck} />
-                        }) : ""
+                    products.map(product => {
+                        return <ProductItem key={product._id} product={product}
+                            isAdmin={isAdmin} deleteProduct={deleteProduct} handleCheck={handleCheck} />
+                    })
                 }
             </div>
 
             <LoadMore />
-            <Loading />
+            {products.length === 0 && <Loading />}
         </>
     )
 }
